@@ -44,4 +44,35 @@ class LinkedList:
 
   def reverse_list(self):
     # TO BE COMPLETED
-    pass
+    #need to juggle some pointers!
+
+    #to start, since it is a SLL
+    #there is only a head, and not an established tail.
+    #initializing initial values:
+
+
+    #the previous value for the start of a List is None, nothing proceeds it!
+    prev = None
+    
+    #the current node is the head of the SLL
+    curr = self.head
+    #while there is node to iterate through...
+    while curr is not None:
+      #the next node is what the current
+      #node is pointing to 
+      next = curr.next_node
+      #what the current node is pointing to
+      #is now the previous node
+      curr.next_node = prev
+      #with the assignment of what the next and current nodes are
+      #you can reassign out dated pointers
+      
+      #your previous node is now what was just current
+      prev = curr
+      #your current node is now what is next in the list
+      curr = next
+
+      #this re-assignment is done until there are no more nodes in the list
+
+    #for the final node, set the head of the SLL to be the final list node
+    self.head = prev
